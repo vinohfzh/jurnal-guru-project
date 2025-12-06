@@ -4,3 +4,83 @@
 
 /* WAJIB untuk tema Flowbite 2.x */
 @import 'flowbite/dist/flowbite.css';
+/* resources/css/app.css */
+
+/* ...kode tailwind lain... */
+
+@layer base {
+  .hero-pattern {
+    background-color: #3b82f6;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  [data-theme='dark'] .hero-pattern {
+    background-color: #1e3a8a;
+  }
+
+  .login-card {
+    animation: fadeInUp 0.6s ease-out;
+    backdrop-filter: blur(10px);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .geometric-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+      transform: translate(30px, -30px) rotate(120deg);
+    }
+
+    66% {
+      transform: translate(-20px, 20px) rotate(240deg);
+    }
+  }
+
+  .input-group {
+    transition: all 0.3s ease;
+  }
+
+  .input-group:focus-within {
+    transform: translateY(-2px);
+  }
+
+  * {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}

@@ -13,9 +13,42 @@
             Jurnal Guru
         </span>
 
-        <div class="flex items-center">
-            <span class="mr-3 text-gray-900 dark:text-gray-100">{{ Auth::user()->name }}</span>
-        </div>
+        <div class="flex items-center gap-3">
 
+    {{-- NAMA USER --}}
+    <span class="text-gray-900 dark:text-gray-100 hidden sm:block">
+        {{ Auth::user()->name }}
+    </span>
+
+    {{-- USER AVATAR DROPDOWN --}}
+    <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+                <img src="https://i.pravatar.cc/100?u={{ Auth::user()->email }}">
+            </div>
+        </label>
+
+        <ul tabindex="0" class="menu dropdown-content bg-base-100 rounded-box w-52 shadow">
+
+            <li>
+                <a href="{{ route('profile.edit') }}">Profil</a>
+            </li>
+
+            <li>
+                <a>Pengaturan</a>
+            </li>
+
+            <li>
+                {{-- FORM LOGOUT POST --}}
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="text-left w-full">Logout</button>
+                </form>
+            </li>
+
+        </ul>
+    </div>
+
+</div>
     </div>
 </nav>

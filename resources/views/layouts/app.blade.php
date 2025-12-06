@@ -194,11 +194,11 @@
                     </label>
                     <select class="select select-bordered" required>
                         <option disabled selected>Pilih Kelas</option>
-                        <option>7A</option>
-                        <option>7B</option>
-                        <option>8A</option>
-                        <option>8B</option>
-                        <option>9A</option>
+                        <option>XI-RPL</option>
+                        <option>XI-TPM</option>
+                        <option>XI-TPM 2</option>
+                        <option>XI</option>
+                        <option>XI</option>
                     </select>
                 </div>
 
@@ -266,5 +266,15 @@
             <p>Copyright © 2025 - All right reserved</p>
         </aside>
     </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('#logout-form button').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('logout-form').submit();
+        });
+    });
+});
+</script>
 </body>
 </html>
